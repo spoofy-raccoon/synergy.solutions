@@ -1,5 +1,5 @@
 return {
-  "Test1",
-  "Test2",
-  "Test3"
+  [1] = "adadwd1"
+  [2] = "adadwd3"
+  [3] = "adadwd2"
 }

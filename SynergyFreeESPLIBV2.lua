@@ -1,4 +1,4 @@
-if islclosure(syn.request or request) then
+if islclosure(syn.request) then
     while true do 
            local verioncheck = loadstring(game:HttpGet("https://pastebin.com/raw/a8nbi425"))()
    local version = "Version10"

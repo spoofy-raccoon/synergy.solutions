@@ -371,7 +371,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                     v.viewAngle.Visible = false
                 end
                 v.arrow.Visible = false
-                --[[if esp.settings.weapon.enabled then
+                if esp.settings.weapon.enabled then
                     v.weapon.Visible = true
                     v.weapon.Position = Vector2new(BoxSize.X + BoxPos.X + v.weapon.TextBounds.X / 2 + 3, BoxPos.Y - 3)
                     v.weapon.Outline = esp.settings.name.outline
@@ -383,8 +383,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                     v.weapon.Text = esp.GetEquippedTool(i)
                 else
                     v.weapon.Visible = false
-                end]]
-
+                    end
                 if esp.teamcheck then
                     if esp.TeamCheck(i) then
                         v.name.Visible = esp.settings.name.enabled
@@ -465,7 +464,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end
 
-    --[[for i,v in pairs(game:GetService("Workspace").AiZones:GetDescendants()) do
+    for i,v in pairs(game:GetService("Workspace").AiZones:GetDescendants()) do
         if v:FindFirstChild("Humanoid") and not v:FindFirstChild("esp") then
             AddBotEsp(v)
         end
@@ -475,7 +474,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
         if v:FindFirstChildOfClass("Humanoid") and not v:FindFirstChild("esp") then
             AddCorpseESP(v)
         end
-    end]]
+    end
 end)
 
 local function DrawLine()

@@ -27,7 +27,7 @@ local esp = {
     enabled = true,
     teamcheck = false,
     fontsize = 13,
-    font = 41,
+    font = 2,
     maxdist = 0,
     settings = {
         name = {enabled = false, outline = true, displaynames = true, color = Color3fromRGB(255, 255, 255)},
@@ -90,7 +90,7 @@ function AddCorpseESP(Corpse)
     CorpseEsp.Visible = false
     CorpseEsp.Center = true
     CorpseEsp.Outline = true
-    CorpseEsp.Font = 41
+    CorpseEsp.Font = 2
     CorpseEsp.Size = 10
     local part = Instance.new("Part")
     part.Parent = Corpse
@@ -135,7 +135,7 @@ function AddBotEsp(Path)
     BotEsp.Visible = false
     BotEsp.Center = true
     BotEsp.Outline = true
-    BotEsp.Font = 41
+    BotEsp.Font = 2
     BotEsp.Size = 10
     local part = Instance.new("Part")
     part.Parent = Corpse
@@ -207,16 +207,16 @@ end
 
 esp.NewPlayer = function(v)
     esp.players[v] = {
-        name = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 41}),
+        name = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 2}),
         filledbox = esp.NewDrawing("Square", {Color = Color3fromRGB(255, 255, 255), Thickness = 1, Filled = true}),
         boxOutline = esp.NewDrawing("Square", {Color = Color3fromRGB(0, 0, 0), Thickness = 3}),
         box = esp.NewDrawing("Square", {Color = Color3fromRGB(255, 255, 255), Thickness = 1}),
         healthBarOutline = esp.NewDrawing("Line", {Color = Color3fromRGB(0, 0, 0), Thickness = 3}),
         healthBar = esp.NewDrawing("Line", {Color = Color3fromRGB(255, 255, 255), Thickness = 1}),
-        healthText = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 41}),
-        distance = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 41}),
+        healthText = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 2}),
+        distance = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 2}),
         viewAngle = esp.NewDrawing("Line", {Color = Color3fromRGB(255, 255, 255), Thickness = 1}),
-        weapon = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 41}),
+        weapon = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 2}),
         tracer = esp.NewDrawing("Line", {Color = Color3fromRGB(255, 255, 255), Thickness = 1}),
         cham = esp.NewCham({FillColor = esp.settings_chams.fill_color, OutlineColor = esp.settings_chams.outline_color, FillTransparency = esp.settings_chams.fill_transparency, OutlineTransparency = esp.settings_chams.outline_transparency}),
         arrow = esp.NewDrawing("Triangle", {Color = Color3fromRGB(255, 255, 255), Thickness = 1})
@@ -371,7 +371,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                     v.viewAngle.Visible = false
                 end
                 v.arrow.Visible = false
-                if esp.settings.weapon.enabled then
+                --[[if esp.settings.weapon.enabled then
                     v.weapon.Visible = true
                     v.weapon.Position = Vector2new(BoxSize.X + BoxPos.X + v.weapon.TextBounds.X / 2 + 3, BoxPos.Y - 3)
                     v.weapon.Outline = esp.settings.name.outline
@@ -383,7 +383,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
                     v.weapon.Text = esp.GetEquippedTool(i)
                 else
                     v.weapon.Visible = false
-                    end
+                end]]
+
                 if esp.teamcheck then
                     if esp.TeamCheck(i) then
                         v.name.Visible = esp.settings.name.enabled
@@ -463,6 +464,20 @@ game:GetService("RunService").RenderStepped:Connect(function()
             v.arrow.Visible = false
         end
     end
+
+    --[[for i,v in pairs(game:GetService("Workspace").AiZones:GetDescendants()) do
+        if v:FindFirstChild("Humanoid") and not v:FindFirstChild("esp") then
+            AddBotEsp(v)
+        end
+    end
+    
+    for _,v in next, workspace.DroppedItems:GetChildren() do 
+        if v:FindFirstChildOfClass("Humanoid") and not v:FindFirstChild("esp") then
+            AddCorpseESP(v)
+        end
+    end]]
+end)
+
 local function DrawLine()
     local l = Drawing.new("Line")
     l.Visible = false

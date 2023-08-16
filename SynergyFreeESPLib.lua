@@ -42,7 +42,7 @@ local esp = {
         arrow = {enabled = false, radius = 100, size = 25, filled = false, transparency = 1, color = Color3fromRGB(255, 255, 255)}
     },
     settings_chams = {
-        enabled = true,
+        enabled = false,
         teamcheck = false,
         outline = false,
         fill_color = Color3fromRGB(255, 255, 255),

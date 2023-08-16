@@ -39,7 +39,7 @@ local Library = {
     OutlineColor = Color3.fromRGB(25, 25, 25);
 
     Black = Color3.new(0, 0, 0);
-    Font = 41;
+    Font = 10;
 
     OpenedFrames = {};
 
@@ -90,7 +90,7 @@ end;
 function Library:CreateLabel(Properties, IsHud)
     local _Instance = Library:Create('TextLabel', {
         BackgroundTransparency = 1;
-        Font = 41;
+        Font = 10;
             
         TextColor3 = Library.FontColor or Library.AccentColor;
         TextSize = 16;
@@ -107,7 +107,7 @@ end;
 function Library:CreateLabel2(Properties, IsHud)
     local _Instance = Library:Create('TextLabel', {
         BackgroundTransparency = 1;
-        Font = 41;
+        Font = 10;
         TextColor3 = Library.FontColor2;
         TextSize = 16;
         TextStrokeTransparency = 0;
@@ -494,7 +494,7 @@ do
             BackgroundTransparency = 1;
             Position = UDim2.new(0, 5, 0, 0);
             Size = UDim2.new(1, -5, 1, 0);
-            Font = 41;
+            Font = 10;
             PlaceholderColor3 = Color3.fromRGB(190, 190, 190);
             PlaceholderText = 'Hex color',
             Text = '#FFFFFF',
@@ -1325,7 +1325,7 @@ do
             Position = UDim2.fromOffset(0, 0),
             Size = UDim2.fromScale(5, 1),
             
-            Font = 41;
+            Font = 10;
             PlaceholderColor3 = Color3.fromRGB(190, 190, 190);
             PlaceholderText = Info.Placeholder or '';
 

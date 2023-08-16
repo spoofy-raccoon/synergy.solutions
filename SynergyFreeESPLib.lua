@@ -27,7 +27,7 @@ local esp = {
     enabled = true,
     teamcheck = false,
     fontsize = 13,
-    font = 2,
+    font = 41,
     maxdist = 0,
     settings = {
         name = {enabled = false, outline = true, displaynames = true, color = Color3fromRGB(255, 255, 255)},
@@ -90,7 +90,7 @@ function AddCorpseESP(Corpse)
     CorpseEsp.Visible = false
     CorpseEsp.Center = true
     CorpseEsp.Outline = true
-    CorpseEsp.Font = 2
+    CorpseEsp.Font = 41
     CorpseEsp.Size = 10
     local part = Instance.new("Part")
     part.Parent = Corpse
@@ -135,7 +135,7 @@ function AddBotEsp(Path)
     BotEsp.Visible = false
     BotEsp.Center = true
     BotEsp.Outline = true
-    BotEsp.Font = 2
+    BotEsp.Font = 41
     BotEsp.Size = 10
     local part = Instance.new("Part")
     part.Parent = Corpse
@@ -207,16 +207,16 @@ end
 
 esp.NewPlayer = function(v)
     esp.players[v] = {
-        name = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 2}),
+        name = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 41}),
         filledbox = esp.NewDrawing("Square", {Color = Color3fromRGB(255, 255, 255), Thickness = 1, Filled = true}),
         boxOutline = esp.NewDrawing("Square", {Color = Color3fromRGB(0, 0, 0), Thickness = 3}),
         box = esp.NewDrawing("Square", {Color = Color3fromRGB(255, 255, 255), Thickness = 1}),
         healthBarOutline = esp.NewDrawing("Line", {Color = Color3fromRGB(0, 0, 0), Thickness = 3}),
         healthBar = esp.NewDrawing("Line", {Color = Color3fromRGB(255, 255, 255), Thickness = 1}),
-        healthText = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 2}),
-        distance = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 2}),
+        healthText = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 41}),
+        distance = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 41}),
         viewAngle = esp.NewDrawing("Line", {Color = Color3fromRGB(255, 255, 255), Thickness = 1}),
-        weapon = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 2}),
+        weapon = esp.NewDrawing("Text", {Color = Color3fromRGB(255, 255, 255), Outline = true, Center = true, Size = 13, Font = 41}),
         tracer = esp.NewDrawing("Line", {Color = Color3fromRGB(255, 255, 255), Thickness = 1}),
         cham = esp.NewCham({FillColor = esp.settings_chams.fill_color, OutlineColor = esp.settings_chams.outline_color, FillTransparency = esp.settings_chams.fill_transparency, OutlineTransparency = esp.settings_chams.outline_transparency}),
         arrow = esp.NewDrawing("Triangle", {Color = Color3fromRGB(255, 255, 255), Thickness = 1})

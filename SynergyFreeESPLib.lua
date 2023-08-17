@@ -475,7 +475,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
         if v:FindFirstChildOfClass("Humanoid") and not v:FindFirstChild("esp") then
             AddCorpseESP(v)
         end
-    end]]
+    end
 end)
 
 local function DrawLine()

@@ -122,10 +122,12 @@ function AddCorpseESP(Corpse)
                 end
             end
         else
-            CorpseEsp.Visible = false
+          if  CorpseEsp.Visible == false then
             CorpseEsp:Remove()
+            CorpseEsp:Destroy()
             chamcham:Destroy()
             renderstepped:Disconnect()
+           end
         end
     end)
 end
@@ -172,10 +174,12 @@ function AddBotEsp(Path)
                 end
             end
         else
-            BotEsp.Visible = false
+           if BotEsp.Visible == false then
             BotEsp:Remove()
+            BotEsp:Destory()
             chamcham:Destroy()
             renderstepped:Disconnect()
+           end
         end
     end)
 end

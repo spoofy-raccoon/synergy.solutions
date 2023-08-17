@@ -166,7 +166,7 @@ function AddBotEsp(Path)
                         BotEsp.Text = Path.Name.." || Distance: " .. tostring(math.round((Path:FindFirstChildOfClass("MeshPart").Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude) / 3)
                     end
                     if esp.customsettings.aidistance.enabled and esp.customsettings.aihealth.enabled then
-                        BotEsp.Text = Path.Name.." Health: " .. tostring(math.round(Path:FindFirstChildOfClass("Humanoid").Health)) .. "|| Distance: " .. tostring(math.round((Path:FindFirstChildOfClass("MeshPart").Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude) / 3)
+                        BotEsp.Text = Path.Name.." Health: " .. tostring(math.round(Path:FindFirstChildOfClass("Humanoid").Health)) .. "|| Distance: " .. tostring(mathfloor((Path:FindFirstChildOfClass("MeshPart").Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude) / 3)
                     end
                     BotEsp.Visible = true
                 else 

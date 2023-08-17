@@ -463,20 +463,6 @@ game:GetService("RunService").RenderStepped:Connect(function()
             v.arrow.Visible = false
         end
     end
-
-    for i,v in pairs(game:GetService("Workspace").AiZones:GetDescendants()) do
-        if v:FindFirstChild("Humanoid") and not v:FindFirstChild("esp") then
-            AddBotEsp(v)
-        end
-    end
-    
-    for _,v in next, workspace.DroppedItems:GetChildren() do 
-        if v:FindFirstChildOfClass("Humanoid") and not v:FindFirstChild("esp") then
-            AddCorpseESP(v)
-        end
-    end
-end)
-
         
 local function DrawLine()
     local l = Drawing.new("Line")
@@ -629,8 +615,8 @@ local function Skeletonesp(plr)
             end)
         end
         coroutine.wrap(UpdaterR15)()
-    end)
-end
+        end)
+    end
 
 for _,v in ipairs(plrs:GetPlayers()) do
     if v ~= plr then
@@ -657,3 +643,4 @@ end)
 
 getgenv().esp = esp
 return esp
+end)

@@ -465,7 +465,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end
 
-    --[[for i,v in pairs(game:GetService("Workspace").AiZones:GetDescendants()) do
+    for i,v in pairs(game:GetService("Workspace").AiZones:GetDescendants()) do
         if v:FindFirstChild("Humanoid") and not v:FindFirstChild("esp") then
             AddBotEsp(v)
         end

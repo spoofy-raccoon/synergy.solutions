@@ -27,7 +27,7 @@ local esp = {
     enabled = true,
     teamcheck = false,
     fontsize = 13,
-    font = 2,
+    font = 10,
     maxdist = 0,
     settings = {
         name = {enabled = false, outline = true, displaynames = true, color = Color3fromRGB(255, 255, 255)},
@@ -90,7 +90,7 @@ function AddCorpseESP(Corpse)
     CorpseEsp.Visible = false
     CorpseEsp.Center = true
     CorpseEsp.Outline = true
-    CorpseEsp.Font = 2
+    CorpseEsp.Font = 10
     CorpseEsp.Size = 10
     local part = Instance.new("Part")
     part.Parent = Corpse
@@ -384,7 +384,6 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 else
                     v.weapon.Visible = false
                 end]]
-
                 if esp.teamcheck then
                     if esp.TeamCheck(i) then
                         v.name.Visible = esp.settings.name.enabled
@@ -465,6 +464,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end
 
+--[[
     for i,v in pairs(game:GetService("Workspace").AiZones:GetDescendants()) do
         if v:FindFirstChild("Humanoid") and not v:FindFirstChild("esp") then
             AddBotEsp(v)
@@ -477,7 +477,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end
 end)
-
+--]]
+        
 local function DrawLine()
     local l = Drawing.new("Line")
     l.Visible = false

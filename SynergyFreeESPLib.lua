@@ -27,7 +27,7 @@ local esp = {
     enabled = true,
     teamcheck = false,
     fontsize = 13,
-    font = 10,
+    font = 2,
     maxdist = 0,
     settings = {
         name = {enabled = false, outline = true, displaynames = true, color = Color3fromRGB(255, 255, 255)},
@@ -90,7 +90,7 @@ function AddCorpseESP(Corpse)
     CorpseEsp.Visible = false
     CorpseEsp.Center = true
     CorpseEsp.Outline = true
-    CorpseEsp.Font = 10
+    CorpseEsp.Font = 2
     CorpseEsp.Size = 10
     local part = Instance.new("Part")
     part.Parent = Corpse
@@ -384,6 +384,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 else
                     v.weapon.Visible = false
                 end]]
+
                 if esp.teamcheck then
                     if esp.TeamCheck(i) then
                         v.name.Visible = esp.settings.name.enabled
@@ -463,7 +464,20 @@ game:GetService("RunService").RenderStepped:Connect(function()
             v.arrow.Visible = false
         end
     end
-        
+
+    --[[for i,v in pairs(game:GetService("Workspace").AiZones:GetDescendants()) do
+        if v:FindFirstChild("Humanoid") and not v:FindFirstChild("esp") then
+            AddBotEsp(v)
+        end
+    end
+    
+    for _,v in next, workspace.DroppedItems:GetChildren() do 
+        if v:FindFirstChildOfClass("Humanoid") and not v:FindFirstChild("esp") then
+            AddCorpseESP(v)
+        end
+    end]]
+end)
+
 local function DrawLine()
     local l = Drawing.new("Line")
     l.Visible = false
@@ -615,8 +629,8 @@ local function Skeletonesp(plr)
             end)
         end
         coroutine.wrap(UpdaterR15)()
-        end)
-    end
+    end)
+end
 
 for _,v in ipairs(plrs:GetPlayers()) do
     if v ~= plr then
@@ -643,4 +657,3 @@ end)
 
 getgenv().esp = esp
 return esp
-end)

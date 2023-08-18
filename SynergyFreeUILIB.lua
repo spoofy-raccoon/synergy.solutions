@@ -1,5 +1,4 @@
 --Library Fix
-
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local TweenService = game:GetService('TweenService');
@@ -43,6 +42,7 @@ local Library = {
 
     OpenedFrames = {};
 
+    Utility = {};
     Signals = {};
     ScreenGui = ScreenGui;
 };
@@ -86,6 +86,130 @@ function Library:Create(Class, Properties)
 
     return _Instance;
 end;
+
+function Library.CreateLoader(Title, WindowSize)
+    local Window = {
+        Max = 2, Current = 0
+    }
+    --
+    Library.Theme.Logo = Utility.AddImage("Abyss/Assets/UI/Logo2.png", "https://i.imgur.com/HI4UTmZ.png")
+    --
+    local WindowOutline = Utility.AddDrawing("Square", {
+        Size = WindowSize,
+        Thickness = 0,
+        Color = Library.Theme.Outline,
+        Visible = true,
+        Filled = true
+    })
+    --
+    WindowOutline.Position = Utility.MiddlePos(WindowOutline)
+    --
+    local WindowOutlineBorder = Utility.AddDrawing("Square", {
+        Size = Vector2.new(WindowOutline.Size.X - 2, WindowOutline.Size.Y - 2),
+        Position = Vector2.new(WindowOutline.Position.X + 1, WindowOutline.Position.Y + 1),
+        Thickness = 0,
+        Color = Library.Theme.Accent[1],
+        Visible = true,
+        Filled = true
+    })
+    --
+    local WindowFrame = Utility.AddDrawing("Square", {
+        Size = Vector2.new(WindowOutlineBorder.Size.X - 2, WindowOutlineBorder.Size.Y - 2),
+        Position = Vector2.new(WindowOutlineBorder.Position.X + 1, WindowOutlineBorder.Position.Y + 1),
+        Thickness = 0,
+        Transparency = 1,
+        Color = Library.Theme.DarkContrast,
+        Visible = true,
+        Filled = true
+    })
+    --
+    local WindowTopline = Utility.AddDrawing("Square", {
+        Size = Vector2.new(WindowOutline.Size.X - 2, 2),
+        Position = Vector2.new(WindowOutlineBorder.Position.X, WindowOutlineBorder.Position.Y),
+        Thickness = 0,
+        Color = Library.Theme.Accent[1],
+        Visible = false,
+        Filled = true
+    })
+    --
+    local WindowImage = Utility.AddDrawing("Image", {
+        Size = WindowFrame.Size,
+        Position = WindowFrame.Position,
+        Transparency = 1, 
+        Visible = true,
+        Data = Library.Theme.Gradient
+    })
+    --
+    local WindowTitle = Utility.AddDrawing("Text", {
+        Font = Library.Theme.Font,
+        Size = Library.Theme.TextSize,
+        Color = Library.Theme.Text,
+        Text = Title,
+        Position = Vector2.new(WindowFrame.Position.X + (WindowFrame.Size.X / 2), WindowOutlineBorder.Position.Y + 8),
+        Visible = true,
+        Center = true,
+        Outline = false
+    })
+    --
+    local WindowText = Utility.AddDrawing("Text", {
+        Font = Library.Theme.Font,
+        Size = Library.Theme.TextSize,
+        Color = Library.Theme.Text,
+        Visible = true,
+        Center = true,
+        Outline = false
+    })
+    --
+    local SliderInline = Utility.AddDrawing("Square", {
+        Size = Vector2.new(205, 15),
+        Color = Library.Theme.Inline,
+        Position = Vector2.new(WindowFrame.Position.X + (WindowFrame.Size.X / 2), WindowOutlineBorder.Position.Y + 8),
+        Transparency = 0.75,
+        Thickness = 0,
+        Visible = true,
+        Filled = true
+    })
+    --
+    local SliderOutline = Utility.AddDrawing("Square", {
+        Size = Vector2.new(SliderInline.Size.X - 2, SliderInline.Size.Y - 2),
+        Color = Library.Theme.Outline,
+        Transparency = 0.5,
+        Thickness = 0,
+        Visible = true,
+        Filled = true
+    })
+    --
+    local SliderFrame = Utility.AddDrawing("Square", {
+        Size = Vector2.new(((SliderInline.Size.X - 2) / (Window.Max / math.clamp(Window.Current, 0, Window.Max))), SliderInline.Size.Y - 2),
+        Color = Library.Theme.Accent[1],
+        Transparency = 0.75,
+        Thickness = 0,
+        Visible = true,
+        Filled = true
+    })
+    --
+    local SliderFrameShader = Utility.AddDrawing("Image", {
+        Size = Vector2.new(SliderInline.Size.X - 2, SliderInline.Size.Y - 2),
+        Transparency = 1, 
+        Visible = true,
+        Data = Library.Theme.Gradient
+    })
+    --
+    local MiddleIcon = Utility.AddDrawing("Image", {
+        Size = Vector2.new(175, 175),
+        Rounding = 5,
+        Transparency = 1, 
+        Visible = true,
+        Data = Library.Theme.Logo
+    })
+    --
+    MiddleIcon.Position = Vector2.new(WindowOutline.Position.X + (WindowOutline.Size.X / 2) - (MiddleIcon.Size.X / 2), WindowOutline.Position.Y + (WindowOutline.Size.Y / 2) - (MiddleIcon.Size.Y / 2) - 15)
+    --
+    Window.SetText = function(Val, Txt)
+        SliderFrame.Size = Vector2.new(((SliderInline.Size.X - 2) / (Window.Max / math.clamp(Val, 0, Window.Max))), SliderInline.Size.Y - 2)
+        WindowText.Text = Txt
+    end
+end
 
 function Library:CreateLabel(Properties, IsHud)
     local _Instance = Library:Create('TextLabel', {

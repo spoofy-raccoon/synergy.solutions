@@ -94,6 +94,7 @@ function Library.CreateLoader(Title, WindowSize)
     --
     Library.Theme.Logo = Utility.AddImage("Abyss/Assets/UI/Logo2.png", "https://i.imgur.com/HI4UTmZ.png")
     --
+    local WindowSize = Vector2.new(300, 300)
     local WindowOutline = Utility.AddDrawing("Square", {
         Size = WindowSize,
         Thickness = 0,

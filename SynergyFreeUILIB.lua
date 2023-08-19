@@ -300,7 +300,7 @@ end
             is_first_tab = false
             selected_tab = TabButton
 
-            TabImage.ImageColor3 = Color3.fromRGB(243, 2, 49)
+            TabImage.ImageColor3 = Color3.fromRGB(255, 255, 255)
             Tab.Visible = true
         end
 
@@ -1942,7 +1942,7 @@ end
                         }, SliderButton)
 
                         local UIGradient = library:create("UIGradient", {
-                            Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(79, 95, 239)), ColorSequenceKeypoint.new(1, Color3.fromRGB(243, 2, 49))},
+                            Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(243, 2, 49)), ColorSequenceKeypoint.new(1, Color3.fromRGB(243, 2, 49))},
                             Rotation = 90,
                         }, SliderFrame)
 

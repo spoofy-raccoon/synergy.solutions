@@ -24,7 +24,7 @@ local cross = Vector3new().Cross;
 local esp = {
     players = {},
     objects = {},
-    enabled = false,
+    enabled = true,
     teamcheck = false,
     fontsize = 13,
     font = 2,
@@ -42,7 +42,7 @@ local esp = {
         arrow = {enabled = false, radius = 100, size = 25, filled = false, transparency = 1, color = Color3fromRGB(255, 255, 255)}
     },
     settings_chams = {
-        enabled = false,
+        enabled = true,
         teamcheck = false,
         outline = false,
         fill_color = Color3fromRGB(255, 255, 255),
@@ -54,7 +54,7 @@ local esp = {
         invisible_Color = Color3fromRGB(255, 0, 0),
     },
     customsettings = {
-        enabled = false,
+        enabled = true,
         corpse = {enabled = false, outline = true, size = 13, color = Color3fromRGB(255, 255, 255)},
         ai = {enabled = false, outline = true, size = 13, color = Color3fromRGB(255, 255, 255)},
         corpsechams = {enabled = false, color = Color3fromRGB(255, 255, 255)},

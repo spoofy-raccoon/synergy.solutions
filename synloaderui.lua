@@ -134,8 +134,8 @@ function L_1_:CreateWindow(L_26_arg0, L_27_arg1)
 	local L_38_ = createObject("UIGradient", {
 		Parent = L_37_,
 		Color = ColorSequence.new{
-			ColorSequenceKeypoint.new(0.00, Color3.fromRGB(1, 180, 213)),
-			ColorSequenceKeypoint.new(1.00, Color3.fromRGB(3, 227, 122))
+			ColorSequenceKeypoint.new(0.00, Color3.fromRGB(131, 19, 7)),
+			ColorSequenceKeypoint.new(1.00, Color3.fromRGB(37, 34, 30))
 		},
 	})
 	local L_39_ = createObject("TextLabel", {
@@ -226,8 +226,8 @@ function L_1_:CreateWindow(L_26_arg0, L_27_arg1)
 	local L_51_ = createObject("UIGradient", {
 		Parent = L_49_,
 		Color = ColorSequence.new{
-			ColorSequenceKeypoint.new(0.00, Color3.fromRGB(1, 180, 213)),
-			ColorSequenceKeypoint.new(1.00, Color3.fromRGB(3, 227, 122))
+			ColorSequenceKeypoint.new(0.00, Color3.fromRGB(131, 19, 7)),
+			ColorSequenceKeypoint.new(1.00, Color3.fromRGB(37, 34, 30))
 		},
 	})
 	local L_52_ = createObject("TextLabel", {

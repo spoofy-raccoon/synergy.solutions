@@ -891,7 +891,7 @@ end
                                 Color = ColorSequence.new {
                                     ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)),
                                     ColorSequenceKeypoint.new(0.17, Color3.fromRGB(255, 0, 255)),
-                                    ColorSequenceKeypoint.new(0.33, Color3.fromRGB(0, 0, 255)),
+                                    ColorSequenceKeypoint.new(0.33, Color3.fromRGB(243, 2, 49)),
                                     ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 255, 255)),
                                     ColorSequenceKeypoint.new(0.67, Color3.fromRGB(0, 255, 0)),
                                     ColorSequenceKeypoint.new(0.83, Color3.fromRGB(255, 255, 0)),
@@ -1826,7 +1826,7 @@ end
                             local Decoration = library:create("Frame", {
                                 Name = "Decoration",
                                 Parent = Button,
-                                BackgroundColor3 = Color3.fromRGB(243, 2, 495),
+                                BackgroundColor3 = Color3.fromRGB(243, 2, 49),
                                 BorderSizePixel = 0,
                                 Size = UDim2.new(0, 1, 1, 0),
                                 Visible = false,

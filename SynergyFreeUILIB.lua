@@ -300,7 +300,7 @@ end
             is_first_tab = false
             selected_tab = TabButton
 
-            TabImage.ImageColor3 = Color3.fromRGB(255, 255, 255)
+            TabImage.ImageColor3 = Color3.fromRGB(243, 2, 49)
             Tab.Visible = true
         end
 
@@ -891,7 +891,7 @@ end
                                 Color = ColorSequence.new {
                                     ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)),
                                     ColorSequenceKeypoint.new(0.17, Color3.fromRGB(255, 0, 255)),
-                                    ColorSequenceKeypoint.new(0.33, Color3.fromRGB(243, 2, 49)),
+                                    ColorSequenceKeypoint.new(0.33, Color3.fromRGB(0, 0, 255)),
                                     ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 255, 255)),
                                     ColorSequenceKeypoint.new(0.67, Color3.fromRGB(0, 255, 0)),
                                     ColorSequenceKeypoint.new(0.83, Color3.fromRGB(255, 255, 0)),
@@ -1940,6 +1940,11 @@ end
                             BorderSizePixel = 0,
                             Size = UDim2.new(0, 100, 1, 0),
                         }, SliderButton)
+
+                        local UIGradient = library:create("UIGradient", {
+                            Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(243, 2, 49)), ColorSequenceKeypoint.new(1, Color3.fromRGB(243, 2, 49))},
+                            Rotation = 90,
+                        }, SliderFrame)
 
                         local SliderValue = library:create("TextLabel", {
                             Name = "SliderValue",

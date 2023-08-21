@@ -114,7 +114,7 @@ function AddCorpseESP(Corpse)
                     if not esp.customsettings.corpse.enabled then
                         CorpseEsp.Text = Corpse.Name.."'s ".."Corpse"
                     elseif esp.customsettings.corpse.enabled then
-                        CorpseEsp.Text = Corpse.Name.."'s ".."Corpse" .. " || Distance: " .. tostring(math.round((Corpse:FindFirstChildOfClass("MeshPart").Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude) / 3)
+                        CorpseEsp.Text = Corpse.Name.."'s ".."Corpse"
                     end
                     CorpseEsp.Visible = true
                 else 

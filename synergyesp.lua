@@ -54,9 +54,9 @@ local esp = {
         invisible_Color = Color3fromRGB(255, 0, 0),
     },
     customsettings = {
-        enabled = true,
-        corpse = {enabled = true, outline = true, size = 13, color = Color3fromRGB(255, 255, 255)},
-        ai = {enabled = true, outline = true, size = 13, color = Color3fromRGB(255, 255, 255)},
+        enabled = false,
+        corpse = {enabled = false, outline = true, size = 13, color = Color3fromRGB(255, 255, 255)},
+        ai = {enabled = false, outline = true, size = 13, color = Color3fromRGB(255, 255, 255)},
         corpsechams = {enabled = false, color = Color3fromRGB(255, 255, 255)},
         aichams = {enabled = false, color = Color3fromRGB(255, 255, 255)},
         corpsedistance = {enabled = false},

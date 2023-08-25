@@ -921,11 +921,11 @@ do
 
                 task.spawn(function()
                     while (not Break) do
-                        if Text == '...' then
+                        if Text == 'NONE' then
                             Text = '';
                         end;
 
-                        Text = Text .. '.';
+                        Text = Text .. 'NONE';
                         DisplayLabel.Text = Text;
 
                         wait(0.4);
